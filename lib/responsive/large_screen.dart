@@ -6,6 +6,7 @@ import 'package:google_search_engine/utils/colors.dart';
 import 'package:google_search_engine/widgets/search.dart';
 import 'package:google_search_engine/widgets/translation_buttons.dart';
 
+import '../widgets/country_footer.dart';
 import '../widgets/large_screen_footer.dart';
 import '../widgets/search_buttons.dart';
 
@@ -88,10 +89,17 @@ class LargeScreenWidget extends StatelessWidget {
                     TranslationButtons(),
                   ],
                 ),
-                 LargeScreenFooter(),
               ],
             ),
           ),
+          const CountryFooter(
+            country: 'India',
+          ),
+          const Divider(
+            height: 0,
+            color: searchBorder,
+          ),
+          const LargeScreenFooter(),
         ],
       ),
     );

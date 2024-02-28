@@ -19,7 +19,7 @@ class SearchButtons extends StatelessWidget {
               width: 15,
             ),
             SearchButton(
-              title: 'I\'m feeling lucky.',
+              title: 'I\'m Feeling Lucky.',
             ),
           ],
         ),
