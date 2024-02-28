@@ -17,14 +17,15 @@ class Search extends StatelessWidget {
         Center(
           child: Image.asset(
             'assets/images/google-logo.png',
-            height: size.height * 0.10,
+            height:
+                (size.width > 768) ? size.height * 0.10 : size.height * 0.12,
           ),
         ),
         const SizedBox(
           height: 20,
         ),
         SizedBox(
-          width: size.width * 0.40,
+          width: (size.width > 768) ? size.width * 0.40 : size.width * 0.9,
           child: TextFormField(
             decoration: InputDecoration(
               border: const OutlineInputBorder(
