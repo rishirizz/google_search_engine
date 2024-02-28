@@ -5,6 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_search_engine/utils/colors.dart';
 import 'package:google_search_engine/widgets/search.dart';
 
+import '../widgets/search_buttons.dart';
+
 class LargeScreenWidget extends StatelessWidget {
   const LargeScreenWidget({super.key});
 
@@ -73,13 +75,17 @@ class LargeScreenWidget extends StatelessWidget {
             SizedBox(
               height: size.height * 0.25,
             ),
-            Expanded(
+            const Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     children: [
                       Search(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      SearchButtons(),
                     ],
                   ),
                 ],
