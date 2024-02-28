@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_search_engine/responsive/large_screen.dart';
+import 'package:google_search_engine/responsive/responsive_screen.dart';
+import 'package:google_search_engine/responsive/small_screen.dart';
+import 'package:google_search_engine/utils/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +16,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Google Search Engine',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: backgroundColor,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const ResponsiveScreen(
+        smallScreen: SmallScreenWidget(),
+        largeScreen: LargeScreenWidget(),
+      ),
     );
   }
 }
