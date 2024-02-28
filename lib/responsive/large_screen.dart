@@ -1,12 +1,16 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_search_engine/utils/colors.dart';
+import 'package:google_search_engine/widgets/search.dart';
 
 class LargeScreenWidget extends StatelessWidget {
   const LargeScreenWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: backgroundColor,
@@ -14,7 +18,7 @@ class LargeScreenWidget extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {},
-            child: Text(
+            child: const Text(
               'Gmail',
               style: TextStyle(
                 color: primaryColor,
@@ -24,7 +28,7 @@ class LargeScreenWidget extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {},
-            child: Text(
+            child: const Text(
               'Images',
               style: TextStyle(
                 color: primaryColor,
@@ -32,7 +36,7 @@ class LargeScreenWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           IconButton(
@@ -42,7 +46,7 @@ class LargeScreenWidget extends StatelessWidget {
               color: primaryColor,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Padding(
@@ -61,6 +65,28 @@ class LargeScreenWidget extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 5, right: 5),
+        child: Column(
+          children: [
+            SizedBox(
+              height: size.height * 0.25,
+            ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      Search(),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
