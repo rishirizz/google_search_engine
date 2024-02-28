@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_search_engine/utils/colors.dart';
 import 'package:google_search_engine/widgets/search.dart';
+import 'package:google_search_engine/widgets/translation_buttons.dart';
 
 import '../widgets/search_buttons.dart';
 
@@ -82,12 +83,13 @@ class LargeScreenWidget extends StatelessWidget {
                   Column(
                     children: [
                       Search(),
-                      SizedBox(
-                        height: 20,
-                      ),
+                      SizedBox(height: 20),
                       SearchButtons(),
+                      SizedBox(height: 20),
+                      TranslationButtons(),
                     ],
                   ),
+                  const LargeScreenFooter(),
                 ],
               ),
             ),
