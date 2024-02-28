@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_search_engine/utils/colors.dart';
 
 import '../widgets/search_header.dart';
+import '../widgets/search_screen_footer.dart';
 import '../widgets/search_tabs.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -8,14 +10,14 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SearchHeader(),
-            Padding(
+            const SearchHeader(),
+            const Padding(
               padding: EdgeInsets.only(left: 160.0),
               child: SearchTabs(),
             ),
@@ -23,6 +25,42 @@ class SearchScreen extends StatelessWidget {
               height: 0,
               thickness: 0.3,
             ),
+            SizedBox(
+              width: double.infinity,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      '< Prev',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: blueColor,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 30,
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Next >',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: blueColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const SearchScreenFooter(),
           ],
         ),
       ),
