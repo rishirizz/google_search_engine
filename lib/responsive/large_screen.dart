@@ -6,6 +6,7 @@ import 'package:google_search_engine/utils/colors.dart';
 import 'package:google_search_engine/widgets/search.dart';
 import 'package:google_search_engine/widgets/translation_buttons.dart';
 
+import '../widgets/large_screen_footer.dart';
 import '../widgets/search_buttons.dart';
 
 class LargeScreenWidget extends StatelessWidget {
@@ -69,32 +70,29 @@ class LargeScreenWidget extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 5, right: 5),
-        child: Column(
-          children: [
-            SizedBox(
-              height: size.height * 0.25,
+      body: Column(
+        children: [
+          SizedBox(
+            height: size.height * 0.25,
+          ),
+          const Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Search(),
+                    SizedBox(height: 20),
+                    SearchButtons(),
+                    SizedBox(height: 20),
+                    TranslationButtons(),
+                  ],
+                ),
+                 LargeScreenFooter(),
+              ],
             ),
-            const Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Search(),
-                      SizedBox(height: 20),
-                      SearchButtons(),
-                      SizedBox(height: 20),
-                      TranslationButtons(),
-                    ],
-                  ),
-                  const LargeScreenFooter(),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
