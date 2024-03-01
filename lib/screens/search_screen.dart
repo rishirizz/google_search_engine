@@ -82,6 +82,9 @@ class SearchScreen extends StatelessWidget {
                 );
               },
             ),
+            const SizedBox(
+              height: 30,
+            ),
             SizedBox(
               width: double.infinity,
               child: Row(
@@ -99,7 +102,7 @@ class SearchScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    width: 30,
+                    width: 20,
                   ),
                   TextButton(
                     onPressed: () {},

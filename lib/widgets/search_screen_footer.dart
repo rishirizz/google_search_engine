@@ -54,13 +54,14 @@ class SearchScreenFooter extends StatelessWidget {
         ),
         const Divider(
           thickness: 0,
-          height: 9,
-          color: Colors.black26,
+          height: 0,
+          color: Color.fromARGB(66, 105, 105, 105),
         ),
         Container(
           color: footerColor,
           padding: const EdgeInsets.symmetric(
-            horizontal: 50,
+            horizontal: 150,
+            vertical: 10,
           ),
           child: Row(
             children: [
