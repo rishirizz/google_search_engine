@@ -7,3 +7,7 @@ https://github.com/rishirizz/google_search_engine/assets/76464776/643f9945-f313-
 Screenshot for Mobile:
 
 ![Google Search Engine (Mobile)](https://github.com/rishirizz/google_search_engine/assets/76464776/8960adaf-21e9-4e8a-ad38-9cc8c12dc0f2)
+
+Screenshot for the Web : 
+
+[Google Search Engine (Web).pdf](https://github.com/rishirizz/google_search_engine/files/14462817/Google.Search.Engine.Web.pdf)
