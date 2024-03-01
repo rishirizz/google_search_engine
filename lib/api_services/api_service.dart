@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class APIService {
   bool isDummyData = true;
-
+// turn this to false if you want to search and view actual search results.
   Future<Map<String, dynamic>> fetchData(
       {required String queryTerm, String start = '0'}) async {
     try {

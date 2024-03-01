@@ -43,7 +43,7 @@ class SearchScreen extends StatelessWidget {
               FutureBuilder(
                 future: apiService.fetchData(
                   queryTerm: searchQuery,
-                  start: start,
+                  start: '0',
                 ),
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (snapshot.hasData) {
@@ -159,9 +159,7 @@ class SearchScreen extends StatelessWidget {
                       ],
                     );
                   }
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
+                  return const SizedBox();
                 },
               ),
             ],
