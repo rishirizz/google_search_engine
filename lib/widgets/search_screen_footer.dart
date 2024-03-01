@@ -11,47 +11,50 @@ class SearchScreenFooter extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: (size.width > 768) ? 150 : 20,
-            vertical: 15,
-          ),
+          width: double.infinity,
           color: footerColor,
-          child: Row(
-            children: [
-              Text(
-                'India',
-                style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 15,
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: (size.width > 768) ? 150 : 20,
+              vertical: 15,
+            ),
+            child: Row(
+              children: [
+                Text(
+                  'India',
+                  style: TextStyle(
+                    color: Colors.grey[700],
+                    fontSize: 15,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              Container(
-                height: 20,
-                width: 0.5,
-                color: Colors.grey,
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              const Icon(
-                Icons.circle,
-                color: Color(0xff70757A),
-                size: 12,
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              const Text(
-                '834005, Ranchi, Jharkhand',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: primaryColor,
+                const SizedBox(
+                  width: 10,
                 ),
-              )
-            ],
+                Container(
+                  height: 20,
+                  width: 0.5,
+                  color: Colors.grey,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Icon(
+                  Icons.circle,
+                  color: Color(0xff70757A),
+                  size: 12,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text(
+                  '834005, Ranchi, Jharkhand',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: primaryColor,
+                  ),
+                )
+              ],
+            ),
           ),
         ),
         const Divider(

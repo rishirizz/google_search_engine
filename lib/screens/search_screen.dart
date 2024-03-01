@@ -47,49 +47,116 @@ class SearchScreen extends StatelessWidget {
                 ),
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (snapshot.hasData) {
-                    return Padding(
-                      padding: EdgeInsets.only(
-                        left: (size.width > 768) ? 160.0 : 20.0,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.only(
-                              top: 12,
-                            ),
-                            child: Text(
-                              'About ${snapshot.data['searchInformation']['formattedTotalResults']} results (${snapshot.data['searchInformation']['formattedSearchTime']} seconds)',
-                              style: const TextStyle(
-                                fontSize: 15,
-                                color: Color(
-                                  0xff70757a,
+                    return Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: (size.width > 768) ? 160.0 : 20.0,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.only(
+                                  top: 12,
+                                ),
+                                child: Text(
+                                  'About ${snapshot.data['searchInformation']['formattedTotalResults']} results (${snapshot.data['searchInformation']['formattedSearchTime']} seconds)',
+                                  style: const TextStyle(
+                                    fontSize: 15,
+                                    color: Color(
+                                      0xff70757a,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                          ListView.builder(
-                            shrinkWrap: true,
-                            itemCount: snapshot.data['items'].length,
-                            itemBuilder: (BuildContext context, int index) {
-                              return Padding(
-                                padding: const EdgeInsets.only(
-                                  top: 10,
+                              ListView.builder(
+                                shrinkWrap: true,
+                                itemCount: snapshot.data['items'].length,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.only(
+                                      top: 10,
+                                    ),
+                                    child: SearchResultsComponent(
+                                      description: snapshot.data?['items']
+                                          [index]['snippet'],
+                                      link: snapshot.data?['items'][index]
+                                          ['formattedUrl'],
+                                      linkToGo: snapshot.data?['items'][index]
+                                          ['link'],
+                                      data: snapshot.data?['items'][index]
+                                          ['title'],
+                                    ),
+                                  );
+                                },
+                              ),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              SizedBox(
+                                width: double.infinity,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {
+                                        if (start != '0') {
+                                          Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  SearchScreen(
+                                                searchQuery: searchQuery,
+                                                start: (int.parse(start) - 10)
+                                                    .toString(), //get prev 10 results
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                      },
+                                      child: const Text(
+                                        '< Prev',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: blueColor,
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 20,
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) => SearchScreen(
+                                              searchQuery: searchQuery,
+                                              start: (int.parse(start) + 10)
+                                                  .toString(), //get next 10 results
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                      child: const Text(
+                                        'Next >',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: blueColor,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                child: SearchResultsComponent(
-                                  description: snapshot.data?['items'][index]
-                                      ['snippet'],
-                                  link: snapshot.data?['items'][index]
-                                      ['formattedUrl'],
-                                  linkToGo: snapshot.data?['items'][index]
-                                      ['link'],
-                                  data: snapshot.data?['items'][index]['title'],
-                                ),
-                              );
-                            },
+                              ),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                        const SearchScreenFooter(),
+                      ],
                     );
                   }
                   return const Center(
@@ -97,67 +164,6 @@ class SearchScreen extends StatelessWidget {
                   );
                 },
               ),
-              const SizedBox(
-                height: 30,
-              ),
-              SizedBox(
-                width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        if (start != '0') {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => SearchScreen(
-                                searchQuery: searchQuery,
-                                start: (int.parse(start) - 10)
-                                    .toString(), //get prev 10 results
-                              ),
-                            ),
-                          );
-                        }
-                      },
-                      child: const Text(
-                        '< Prev',
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: blueColor,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => SearchScreen(
-                              searchQuery: searchQuery,
-                              start: (int.parse(start) + 10)
-                                  .toString(), //get next 10 results
-                            ),
-                          ),
-                        );
-                      },
-                      child: const Text(
-                        'Next >',
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: blueColor,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              const SearchScreenFooter(),
             ],
           ),
         ),
