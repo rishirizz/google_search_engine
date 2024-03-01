@@ -11,7 +11,7 @@ class APIService {
   Future<Map<String, dynamic>> fetchData(
       {required String queryTerm, String start = '0'}) async {
     try {
-      if (!isDummyData) {
+      if (isDummyData == false) {
         String q = queryTerm.contains('')
             ? queryTerm.split('').join('%20')
             : queryTerm;

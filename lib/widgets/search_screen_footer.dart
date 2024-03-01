@@ -6,11 +6,13 @@ class SearchScreenFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 150,
+          padding: EdgeInsets.symmetric(
+            horizontal: (size.width > 768) ? 150 : 20,
             vertical: 15,
           ),
           color: footerColor,
@@ -59,8 +61,8 @@ class SearchScreenFooter extends StatelessWidget {
         ),
         Container(
           color: footerColor,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 150,
+          padding: EdgeInsets.symmetric(
+            horizontal: (size.width > 768) ? 150 : 20,
             vertical: 10,
           ),
           child: Row(
