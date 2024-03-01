@@ -10,4 +10,5 @@ Screenshot for Mobile:
 
 Screenshot for the Web : 
 
-[Google Search Engine (Web).pdf](https://github.com/rishirizz/google_search_engine/files/14462817/Google.Search.Engine.Web.pdf)
+![Google Search Engine (Web)](https://github.com/rishirizz/google_search_engine/assets/76464776/d9fa185c-3d7c-43b8-b7b3-f0ba554de6bc)
+
