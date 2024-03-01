@@ -38,8 +38,8 @@ class _SearchResultsComponentState extends State<SearchResultsComponent> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
-              if (await canLaunch(widget.linkToGo)) {
-                await launch(widget.linkToGo);
+              if (await canLaunchUrl(Uri.parse(widget.linkToGo))) {
+                await launchUrl(Uri.parse(widget.linkToGo));
               }
             },
             onHover: (val) {
