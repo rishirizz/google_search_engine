@@ -1,16 +1,9 @@
-# google_search_engine
+This project aims to replicate the basic functionality of Google's search engine. Once the user searches something, it yields the respective search results and then the user can choose to open any of the searched results as well. It consists of only two screens namely ```Home``` and ```Search``` and is fully responsive. 
 
-A new Flutter project.
+App Functionality Demo : 
 
-## Getting Started
+https://github.com/rishirizz/google_search_engine/assets/76464776/643f9945-f313-43f5-9071-431348da5962
 
-This project is a starting point for a Flutter application.
+Screenshot for Mobile:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Google Search Engine (Mobile)](https://github.com/rishirizz/google_search_engine/assets/76464776/8960adaf-21e9-4e8a-ad38-9cc8c12dc0f2)
