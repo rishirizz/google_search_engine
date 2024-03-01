@@ -8,7 +8,13 @@ import '../widgets/search_screen_footer.dart';
 import '../widgets/search_tabs.dart';
 
 class SearchScreen extends StatelessWidget {
-  SearchScreen({super.key});
+  final String searchQuery;
+  final String start;
+  SearchScreen({
+    required this.searchQuery,
+    required this.start,
+    super.key,
+  });
 
   final APIService apiService = APIService();
   @override
@@ -30,7 +36,8 @@ class SearchScreen extends StatelessWidget {
             ),
             FutureBuilder(
               future: apiService.fetchData(
-                queryTerm: 'queryTerm',
+                queryTerm: searchQuery,
+                start: start,
               ),
               builder: (BuildContext context, AsyncSnapshot snapshot) {
                 if (snapshot.hasData) {
@@ -92,7 +99,19 @@ class SearchScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if (start != '0') {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => SearchScreen(
+                              searchQuery: searchQuery,
+                              start: (int.parse(start) - 10)
+                                  .toString(), //get prev 10 results
+                            ),
+                          ),
+                        );
+                      }
+                    },
                     child: const Text(
                       '< Prev',
                       style: TextStyle(
@@ -105,7 +124,17 @@ class SearchScreen extends StatelessWidget {
                     width: 20,
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => SearchScreen(
+                            searchQuery: searchQuery,
+                            start: (int.parse(start) + 10)
+                                .toString(), //get next 10 results
+                          ),
+                        ),
+                      );
+                    },
                     child: const Text(
                       'Next >',
                       style: TextStyle(
