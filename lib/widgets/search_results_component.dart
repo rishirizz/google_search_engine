@@ -63,7 +63,9 @@ class _SearchResultsComponentState extends State<SearchResultsComponent> {
                 Text(
                   widget.data,
                   style: TextStyle(
+                    fontSize: 20,
                     color: blueColor,
+                    fontWeight: FontWeight.w400,
                     decoration: _showUnderLine
                         ? TextDecoration.underline
                         : TextDecoration.none,

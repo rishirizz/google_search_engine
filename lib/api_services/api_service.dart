@@ -6,7 +6,7 @@ import 'package:google_search_engine/utils/constants.dart';
 import 'package:http/http.dart' as http;
 
 class APIService {
-  bool isDummyData = false;
+  bool isDummyData = true;
 
   Future<Map<String, dynamic>> fetchData(
       {required String queryTerm, String start = '0'}) async {
