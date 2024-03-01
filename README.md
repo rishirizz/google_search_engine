@@ -10,5 +10,8 @@ Screenshot for Mobile:
 
 Screenshot for the Web : 
 
-![Google Search Engine (Web)](https://github.com/rishirizz/google_search_engine/assets/76464776/d9fa185c-3d7c-43b8-b7b3-f0ba554de6bc)
+![home_page_web](https://github.com/rishirizz/google_search_engine/assets/76464776/dc1a2dbe-74e3-4c77-a7bc-ba3afc455203)
+
+![search_page_web](https://github.com/rishirizz/google_search_engine/assets/76464776/7dda2706-d71e-4d67-ba9d-9874db79fa3b)
+
 
