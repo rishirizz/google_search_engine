@@ -6,7 +6,6 @@ class SearchScreenFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Column(
       children: [
         Container(

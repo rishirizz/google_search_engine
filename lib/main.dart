@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_search_engine/responsive/large_screen.dart';
-import 'package:google_search_engine/responsive/responsive_screen.dart';
-import 'package:google_search_engine/responsive/small_screen.dart';
 import 'package:google_search_engine/screens/search_screen.dart';
 import 'package:google_search_engine/utils/colors.dart';
 
@@ -20,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor,
       ),
-      home: const SearchScreen(),
+      home: SearchScreen(),
       // home: const ResponsiveScreen(
       //   smallScreen: SmallScreenWidget(),
       //   largeScreen: LargeScreenWidget(),
